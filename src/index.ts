@@ -11,6 +11,8 @@ const phonems = [
 const debug = false;
 const log = (...params: any[]) => (debug ? console.log(...params) : undefined);
 
+export const isDebugOn = () => debug
+
 export function score(word: string): number {
   let success = 0;
   let index = 0;
