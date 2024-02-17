@@ -7,7 +7,7 @@
   "scripts": {
     "test": "vitest",
     "build": "tsc",
-    "prepublish": "tsc"
+    "prepublish": "vitest && tsc"
   },
   "keywords": [],
   "author": "Cláudio Medeiros <klawdyo@gmail.com>",
