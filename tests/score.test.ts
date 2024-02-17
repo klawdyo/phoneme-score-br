@@ -1,4 +1,4 @@
-import { score } from "./index";
+import { score } from "../index";
 
 describe("score 100%", () => {
   test("banana", () => expect(score("banana")).toBe(1));
