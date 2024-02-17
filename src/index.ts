@@ -1,10 +1,10 @@
 const phonems = [
   /^(nh|ss|rr|ch|lh|th)[aeiou]/, // nha, ssa, rra, cha
-  /^[bcdfgkptv][rl][aeiou](ns)?/, // bri, cla
-  /^[bcdfghjklmnprstvxz][aeiou][srlmnx]?/, // bar, 
+  /^[bcdfgkptv][rl][aeiou](ns|[srlmnxz])?/, // bri, cla
+  /^[bcdfghjklmnprstvxz][aeiou][srlmnxz]?/, // bar,
   /^qu[aeiou]/,
   /^[aeiou]ns/,
-  /^[aeiou][srlmnx]/,
+  /^[aeiou][srlmnxz]/,
   /^[aeiou]/,
 ];
 
@@ -17,19 +17,18 @@ export function score(word: string): number {
   const wordLength = word.length;
 
   while (index < wordLength) {
-    const result = meupau(word, index, phonems);
+    const result = checkPart(word, index, phonems);
     log("result", result);
 
     if (!result.length) {
       index++;
-      log("nao achou",  result);
+      log("nao achou", result);
     } else {
       index = result.index;
       success += result.length;
-      log("achou",result);
+      log("achou", result);
     }
 
-    if (index >= wordLength) break;
   }
 
   log("success", success);
@@ -38,7 +37,11 @@ export function score(word: string): number {
   return success / wordLength;
 }
 
-function meupau(word: string, index: number, phonems: RegExp[]): { index: number; length: number } {
+function checkPart(
+  word: string,
+  index: number,
+  phonems: RegExp[]
+): { index: number; length: number } {
   const substr = word.substring(index);
   let length = 0;
 
