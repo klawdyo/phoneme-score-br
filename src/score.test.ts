@@ -1,6 +1,6 @@
 import { score } from "./index";
 
-describe("score", () => {
+describe("score 100%", () => {
   test("banana", () => expect(score("banana")).toBe(1));
   test("claudio", () => expect(score("claudio")).toBe(1));
   test("bronha", () => expect(score("bronha")).toBe(1));
@@ -21,4 +21,17 @@ describe("score", () => {
   test("inscreve", () => expect(score("inscreve")).toBe(1));
   test("queens", () => expect(score("queens")).toBe(1));
   test("trans", () => expect(score("trans")).toBe(1));
+  test("meretriz", () => expect(score("meretriz")).toBe(1));
+});
+
+describe("score 80%", () => {
+  test("banap", () => expect(score("banap")).toBe(.8));
+});
+
+describe("score 75%", () => {
+  test("banp", () => expect(score("banp")).toBe(.75));
+});
+
+describe("score 50%", () => {
+  test("bawx", () => expect(score("bawx")).toBe(.5));
 });
