@@ -1,8 +1,8 @@
 {
   "name": "phoneme-score-br",
-  "version": "0.0.1-b",
+  "version": "0.0.1-i",
   "description": "",
-  "main": "src/index.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "vitest",

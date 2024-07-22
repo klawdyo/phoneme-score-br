@@ -1,2 +1,4 @@
-/src
-/dist/src/*.test.*
+/*
+
+!dist/
+!package.json
